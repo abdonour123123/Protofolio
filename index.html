@@ -84,6 +84,37 @@
         </div>
       </div>
     </section>
+    <!-- TIC TAO SECTION -->
+    <section id="tic tao" class="container">
+      <div class="game-container">
+        <h1>Tic Tac Toe</h1>
+
+        <div class="scoreboard">
+          <div class="score-box">Player X<strong id="scoreX">0</strong></div>
+          <div class="score-box">Draws<strong id="scoreDraw">0</strong></div>
+          <div class="score-box">Player O<strong id="scoreO">0</strong></div>
+        </div>
+
+        <div class="status" id="status">Player X's turn</div>
+
+        <div class="board" id="board">
+          <button class="cell" data-index="0"></button>
+          <button class="cell" data-index="1"></button>
+          <button class="cell" data-index="2"></button>
+          <button class="cell" data-index="3"></button>
+          <button class="cell" data-index="4"></button>
+          <button class="cell" data-index="5"></button>
+          <button class="cell" data-index="6"></button>
+          <button class="cell" data-index="7"></button>
+          <button class="cell" data-index="8"></button>
+        </div>
+
+        <div class="controls">
+          <button class="control-btn" id="restartBtn">Restart Round</button>
+          <button class="control-btn" id="resetBtn">Reset Score</button>
+        </div>
+      </div>
+    </section>
 
     <!-- My Projects Section -->
     <section id="projects" class="container" style="margin-top: 60px">
@@ -96,7 +127,7 @@
             <span class="project-tech"></span>
           </div>
           <img
-            src="assets/project1.png"
+            src="./assets/project1.png"
             alt="Agency/Protofolio  Website"
             class="project-img"
           />
@@ -234,8 +265,11 @@
         <div class="contact-info">
           <div class="contact-email">
             <i class="fa-solid fa-envelope"></i>
-            <span>body50nour@gmail.com</span>
+            <span id="copyEmail" style="cursor: pointer"
+              >body50nour@gmail.com</span
+            >
           </div>
+          <button id="copyBtn" title="Copy to clipboard">📋</button>
           <div class="contact-socials">
             <a href="https://github.com/abdonour123123" class="social-link"
               ><i class="fa-brands fa-github"></i
@@ -288,6 +322,7 @@
     >
       &copy; 2026 Falcon JNB. All rights reserved.
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <script src="script.js"></script>
   </body>
