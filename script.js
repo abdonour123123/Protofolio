@@ -18,6 +18,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Theme Toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+  
+  if (localStorage.getItem("theme") === "light") {
+    document.body.setAttribute("data-theme", "light");
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    if (document.body.getAttribute("data-theme") === "light") {
+      document.body.removeAttribute("data-theme");
+      localStorage.setItem("theme", "dark");
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+    } else {
+      document.body.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+      themeIcon.classList.replace("fa-sun", "fa-moon");
+    }
+  });
+
+  // Mobile Hamburger Menu
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinksContainer = document.getElementById("nav-links");
+  
+  menuIcon.addEventListener("click", () => {
+    navLinksContainer.classList.toggle("active");
+  });
+
+  navLinksContainer.querySelectorAll("a").forEach(item => {
+    item.addEventListener("click", () => {
+      navLinksContainer.classList.remove("active");
+    });
+  });
+
   // Contact Form Handling
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
@@ -33,6 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.style.backgroundColor = "#10b981"; // Green
         contactForm.reset();
 
+        /* 
+        // 🚀 WHEN YOU GET REAL EMAILJS KEYS, ADD THIS HERE:
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+          from_name: document.getElementById("name").value,
+          from_email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+        });
+        */
+
         setTimeout(() => {
           btn.textContent = originalText;
           btn.style.backgroundColor = "";
@@ -41,6 +85,76 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     });
   }
+
+  // == NEW ANIMATIONS ==
+  
+  // 1. Scroll-Triggered Fade In
+  const fadeElements = document.querySelectorAll(".fade-in");
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  fadeElements.forEach((el) => fadeObserver.observe(el));
+
+  // 2. 3D Mouse Tilt & Spotlight Effect on Glass Cards
+  const glassCards = document.querySelectorAll(".glass-card");
+  glassCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Spotlight Variables
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+
+      // 3D Tilt Calculation
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5; // Subtle 5deg tilt
+      const rotateY = ((x - centerX) / centerX) * 5;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      // Reset tilt when mouse leaves (hover state CSS handles the rest)
+      card.style.transform = ``;
+    });
+  });
+
+  // 3. Scroll Progress Bar
+  const progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  document.body.prepend(progressBar);
+
+  window.addEventListener("scroll", () => {
+    const totalScroll = document.documentElement.scrollTop;
+    const windowHeight =
+      document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = (totalScroll / windowHeight) * 100;
+    progressBar.style.width = `${scrollPercent}%`;
+  });
+
+  // 4. Parallax Background Stars
+  const starsBg = document.querySelector(".bg-stars");
+  if (starsBg) {
+    window.addEventListener("mousemove", (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      // Move background slightly opposite to mouse
+      starsBg.style.transform = `translate(-${x * 30}px, -${y * 30}px)`;
+    });
+  }
+
+
 });
 
 const cells = document.querySelectorAll(".cell");
@@ -256,18 +370,6 @@ resetBtn.addEventListener("click", resetScore);
 updateScores();
 enableBoard();
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  emailjs
-    .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-      from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    })
-    .then(() => alert("Sent ✅"))
-    .catch(() => alert("Error ❌"));
-});
 
 document.getElementById("copyBtn").addEventListener("click", function () {
   navigator.clipboard.writeText("body50nour@gmail.com");
