@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Falcon JNB | Full-Stack Web Developer</title>
+  <meta name="description"
+    content="Portfolio of Falcon JNB, a passionate Full-Stack Web Developer building fast & modern applications." />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Floating Navigation Bar -->
+  <nav class="glass-navbar">
+    <div class="nav-brand">Falcon.</div>
+    <div class="menu-icon" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#tic-tac-toe">Mini Game</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Background Effects -->
+  <div class="bg-stars"></div>
+  <div class="bg-glow"></div>
+
+  <!-- Header / Hero Section -->
+  <header class="hero container">
+    <div class="hero-image-cinematic">
+      <img src="assets/12f124e5-4fff-4956-aad4-fdaa01e77a82.png" alt="Falcon JNB Profile" />
+    </div>
+    <div class="hero-content fade-in">
+      <h1 class="author-name">Abdelrahman Nour</h1>
+      <h2 class="author-title">Front-End Web Developer</h2>
+      <p class="author-subtitle"><span class="typing-text">Building fast & modern applications.</span></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about" class="container">
+    <div class="glass-card about-card fade-in">
+      <div class="about-image-wrapper">
+        <img src="assets/profile.png" alt="Falcon JNB" class="about-image float-anim" />
+      </div>
+      <div class="about-content">
+        <h3 class="section-title text-left">About Me</h3>
+        <p>
+          I'm a front-end developer with experience in HTML, CSS, JavaScript,
+          and React. I like building responsive websites and simple
+          interactive interfaces. I'm currently improving my skills and
+          working on projects to become a better web developer.
+        </p>
+        <div class="about-icons">
+          <i class="fa-brands fa-html5" style="color: #e34f26" title="HTML5"></i>
+          <i class="fa-brands fa-css3-alt" style="color: #1572b6" title="CSS3"></i>
+          <i class="fa-brands fa-js" style="color: #f7df1e" title="JavaScript"></i>
+          <i class="fa-brands fa-react" style="color: #61dafb" title="React"></i>
+          <i class="fa-brands fa-node-js" style="color: #339933" title="Node.js"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TIC TAO SECTION -->
+  <section id="tic-tac-toe" class="container">
+    <div class="game-container fade-in">
+      <h1>Tic Tac Toe</h1>
+
+      <div class="scoreboard">
+        <div class="score-box">Player X<strong id="scoreX">0</strong></div>
+        <div class="score-box">Draws<strong id="scoreDraw">0</strong></div>
+        <div class="score-box">Player O<strong id="scoreO">0</strong></div>
+      </div>
+
+      <div class="status" id="status">Player X's turn</div>
+
+      <div class="board" id="board">
+        <button class="cell" data-index="0"></button>
+        <button class="cell" data-index="1"></button>
+        <button class="cell" data-index="2"></button>
+        <button class="cell" data-index="3"></button>
+        <button class="cell" data-index="4"></button>
+        <button class="cell" data-index="5"></button>
+        <button class="cell" data-index="6"></button>
+        <button class="cell" data-index="7"></button>
+        <button class="cell" data-index="8"></button>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" id="restartBtn">Restart Round</button>
+        <button class="control-btn" id="resetBtn">Reset Score</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Projects Section -->
+  <section id="projects" class="container" style="margin-top: 60px">
+    <h3 class="section-title">My Projects</h3>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="glass-card project-card fade-in">
+        <div class="project-header">
+          <h4>Agency/Portfolio Page</h4>
+          <span class="project-tech"></span>
+        </div>
+        <img src="/assets/project1.PNG" alt="Agency/Portfolio  Website" class="project-img" />
+        <div class="project-links">
+          <a href="https://upupexpert.vercel.app/" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="https://github.com/abdonour123123/upupexpert" class="btn btn-secondary btn-sm"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="glass-card project-card fade-in">
+        <div class="project-header">
+          <h4>SaaS-style Page</h4>
+          <span class="project-tech">HTML & CSS & JS</span>
+        </div>
+        <img src="./assets/project2.PNG" alt="SaaS-style Page" class="project-img" />
+        <div class="project-links">
+          <a href="https://vss-nexcent.vercel.app/" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="https://github.com/abdonour123123/vss-nexcent" class="btn btn-secondary btn-sm"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="glass-card project-card fade-in">
+        <div class="project-header">
+          <h4>Web App</h4>
+          <span class="project-tech">React</span>
+        </div>
+        <img src="./assets/project3.png" alt="Web App" class="project-img" />
+        <p>NOTE Username:demo, Password: password123</p>
+        <div class="project-links">
+          <a href="https://vss-secure-upload-page-o3ge.vercel.app/" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="https://github.com/abdonour123123/vss-secure-upload-page" class="btn btn-secondary btn-sm"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Skills Section -->
+  <section id="skills" class="container" style="margin-top: 80px; margin-bottom: 80px">
+    <h3 class="section-title">My Skills</h3>
+    <div class="glass-card skills-container fade-in">
+      <div class="skills-column">
+        <h4>Frontend</h4>
+        <div class="skills-tags">
+          <span class="skill-tag skill-react"><i class="fa-brands fa-react"></i> React</span>
+          <span class="skill-tag skill-html">
+            <i class="fa-brands fa-html5" style="color: #e34f26" title="HTML5"></i>
+            HTML5</span>
+          <span class="skill-tag skill-css">
+            <i class="fa-brands fa-css3-alt" style="color: #1572b6" title="CSS3"></i>
+            CSS3</span>
+
+          <span class="skill-tag skill-js"><i class="fa-brands fa-js"></i>JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skills-divider"></div>
+      <div class="skills-column">
+        <h4>Tools</h4>
+        <div class="skills-tags">
+          <span class="skill-tag skill-git"><i class="fa-brands fa-git-alt"></i> Git</span>
+          <span class="skill-tag skill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
+          <span class="skill-tag skill-vscode">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container" style="margin-top: 80px; margin-bottom: 100px">
+    <div class="contact-header">
+      <h3 class="section-title" style="margin-bottom: 5px">Contact Me</h3>
+      <h2 class="contact-subtitle" style="text-align: center">
+        Get In Touch
+      </h2>
+      <p style="text-align: center; color: var(--text-secondary)">
+        Feel free to reach out to me!
+      </p>
+    </div>
+
+    <div class="contact-content fade-in">
+      <div class="contact-info">
+        <div class="contact-email">
+          <i class="fa-solid fa-envelope"></i>
+          <span id="copyEmail" style="cursor: pointer">body50nour@gmail.com</span>
+        </div>
+        <button id="copyBtn" title="Copy to clipboard">📋</button>
+        <div class="contact-socials">
+          <a href="https://github.com/abdonour123123" class="social-link github"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/aboodo.nooor" class="social-link facebook"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/201055483551" class="social-link whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/datboi_nourr/" class="social-link instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <form class="glass-card contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required />
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder="Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid var(--glass-border);
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      ">
+    &copy; 2026 Falcon JNB. All rights reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
